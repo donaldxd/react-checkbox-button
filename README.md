@@ -118,6 +118,8 @@ const App = () => { 
 render(<App />, document.querySelector('#app'));
 
 ```
+![4ebb2ed87ecd31ea3a2acfd664d5fb72.gif](en-resource://database/499:0)
+
 ## API
 
 | 参数 | 说明 | 类型 |
