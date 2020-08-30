@@ -1,4 +1,4 @@
-## react_checkbox_button
+## react-checkbox-button
 仿elemntUI多选按钮checkbox的React多选按钮组件，可应用于Antd的form表单场景以及不在表单中使用的任何多选场景。
 
 
