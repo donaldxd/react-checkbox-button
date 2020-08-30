@@ -107,7 +107,7 @@ const App = () => { 
                     </Select>
                 </Form.Item>
                 // initialValue 为默认选中值
-                <Form.Item label="专业：" name="level" initialValue={['beijing', 'chengdu']}>    
+                <Form.Item label="专业：" name="level" initialValue={['北京', '成都']}>    
                     <ReactCheckboxButton data={list} />
                 </Form.Item>
             </Form>
@@ -116,18 +116,74 @@ const App = () => { 
 }
 
 render(<App />, document.querySelector('#app'));
-
 ```
 ![test.gif](https://i.loli.net/2020/08/30/Tqh762QoeIrn3g5.gif)
 
+在Antd表单和不在Antd表单中一起使用代码：
+
+```
+import React, {useState} from 'react';
+import './App.css';
+import {Form} from 'antd'
+import ReactCheckBoxButton from "react-checkbox-button";
+
+const list = [  
+    {id: 1, value: '上海', label: '上海'},  
+    {id: 2, value: '北京', label: '北京'},  
+    {id: 3, value: '成都', label: '成都'},  
+    {id: 4, value: '广州', label: '广州'},  
+    {id: 5, value: '杭州', label: '杭州'}
+]
+
+
+function App() {
+    const [value, setValue] = useState(['上海', '成都']);
+    return (
+        <div className="App">
+        
+            {/*不在antd表单中*/}
+            <header className="App-header">
+                <ReactCheckBoxButton
+                    data={list}
+                    size="small"
+                    value={value}
+                    onChange={(values) => setValue(values)} />
+                    
+            <div>----------------------------------------------------</div>
+
+             {/*antd表单中*/}
+             
+            <Form
+                name="basic"
+            >
+                <Form.Item
+                    initialValue={['上海']}
+                    name="citys"
+                    rules={[{ required: true, message: 'Please select your citys!' }]}
+                >
+                    <ReactCheckBoxButton data={list}/>
+                </Form.Item>
+            </Form>
+            </header>
+        </div>
+    );
+}
+
+export default App;
+
+
+
+```
+![test1.gif](https://i.loli.net/2020/08/30/RCGBtOKcSHUP9pT.gif)
+
 ## API
 
-| 参数 | 说明 | 类型 |
-| --- | --- | --- |
-| data | 数据源  | Array |
-| value | 默认选中值  | Array |
-| size | 选择按钮大小  | String |
-| onChange | 选中按钮时调用此函数  | function(arr: any[], checked: boolean) |
+| 参数 | 说明 | 类型 | 示例 |
+| --- | --- | --- | --- |
+| data | 数据源(必传)  | Array | data={[{value: '成都', label: '成都'}, {value: '上海', label: '上海'}]} |
+| value | 默认选中值(不在Antd表单场景必传， antd表单中使用表单initialValue)  | Array | value={['成都']}或者initialValue={['成都', '北京']} |
+| size | 选择按钮大小(默认default，非必传)  | String | size="default" |
+| onChange | 选中按钮时调用此函数(不在Antd表单场景，必传)  | function(arr: any[], checked: boolean) | onChange={(values) => setValue(values)} |
 
 ## 查看示例
 yarn
