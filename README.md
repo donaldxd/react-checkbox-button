@@ -118,7 +118,7 @@ const App = () => { 
 render(<App />, document.querySelector('#app'));
 
 ```
-![4ebb2ed87ecd31ea3a2acfd664d5fb72.gif](en-resource://database/499:0)
+![test.gif](https://i.loli.net/2020/08/30/Tqh762QoeIrn3g5.gif)
 
 ## API
 
