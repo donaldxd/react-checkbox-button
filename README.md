@@ -5,18 +5,18 @@
 ## 安装
 yarn
 ```
-yarn add react_checkbox_button
+yarn add react-checkbox-button
 ```
 npm 
 ```
-npm install react_checkbox_button
+npm install react-checkbox-button
 ```
 ## 使用
 不在Antd表单中使用方法：
 ```
 import React, {useState} from 'react';
 import { render } from 'react-dom';
-import ReactCheckboxButton from 'react_checkbox_button';
+import ReactCheckboxButton from 'react-checkbox-button';
 
 
 // 数据源
@@ -64,7 +64,7 @@ render(<App />, document.querySelector('#app'));
 ```
 import React, {useState} from 'react';
 import {  Form, Select } from 'antd';
-import ReactCheckboxButton from 'react_checkbox_button';
+import ReactCheckboxButton from 'react-checkbox-button';
 
 
 // 数据源
